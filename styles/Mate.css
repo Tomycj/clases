@@ -13,6 +13,7 @@
 
 body {
 	background-color: var(--bg-color);
+	font-family: Inter, Asap, Arial, sans-serif;
 	overflow-y: scroll;
 }
 body::-webkit-scrollbar {
