@@ -1,0 +1,187 @@
+<!doctype html>
+<html>
+    <head>
+		<title>Matemática</title>
+		<meta charset="UTF-8">
+		<link rel="icon" href="./images/logoBLR.png" type="image/icon type">
+		<link rel="stylesheet" href="./styles/Mate.css">
+		<link rel="preload" href="./fonts/Inter.var.woff2" as="font" type="font/woff2" crossorigin>
+	</head>
+
+    <body>
+
+        <div style="position: absolute; font-size: 10px; font-style: italic;"> TC - 2024 - Consulte para clases particulares.</div>
+        <div id="scroll"style="position: fixed; right: 10px;"></div>
+		
+		<h1 style ="text-align: center">
+			Ejercicios de matemática<br>
+		</h1>
+
+        <h2 class="contentHider">MCM (Mínimo Común Múltiplo)</h2>
+
+        <div>
+            <p><b>1)</b> Juan va al gimnasio cada 20 días, y María cada 38 días. ¿Cada cuántos días se encuentran en el gimasio?</p>
+            <p><b>2)</b> En una ciudad llueve cada 24 días y se juega fútbol cada 32 días. ¿Cada cuántos días se juega un partido bajo la lluvia?</p>
+            <p><b>3)</b> Hoy cumplo 15 años y está lloviendo. Si en donde vivo llueve cada 76 días, ¿Cuál será mi próximo cumpleaños lluvioso? (Ignoremos años bisiestos).</p>
+        </div>
+
+        <h2 class="contentHider">MCD (Máximo Común Divisor)</h2>
+
+        <div>
+            <p><b>1)</b> Se tiene una cuerda de 120 metros y otra de 96 metros, y se busca cortar ambas en trozos de igual longitud, siendo los trozos lo más largos posible.
+            ¿Cuánto medirá cada trozo?</p>
+
+            <div class="indented">
+                <span class="contentHider bullet">Guía:</span>
+                <div>
+                    <p>
+                        Vamos probando con distintas longitudes de cuerda a cortar.
+                        <br>2 m: Puedo dividir a ambos en trozos de 2 m, pero busco trozos más largos. 
+                        <br>3 m: Lo mismo.
+                        <br>4 m: Lo mismo.
+                        <br>5 m: Puedo dividir a la de 120 m en trozos de 5 m, pero no a la de 96 m. Esto quiere decir que 5 no es un divisor de 96.
+                    </p>
+                    <p>Así me doy cuenta que estoy buscando números que tienen que ser divisores de AMBAS longitudes.
+                        Es decir, busco divisores comunes. Además, el número
+                        que busco debe ser lo más grande posible, por lo que buscaré el Máximo Común Divisor.
+                    </p>
+                </div>
+            </div>
+
+            <p><b>2)</b> Para pintar una casa necesitaré 12 L de pintura roja, 24 L de pintura verde, y 16 L de pintura blanca.
+            <br> Si quiero comprar toda esta pintura en latas con la misma cantidad de litros, y además quiero comprar la menor cantidad de latas posible
+            sin que sobre nada, 
+            ¿de cuántos litros deben ser las latas?</p>
+
+            <div  class="indented">
+                <span class="contentHider bullet">Guía:</span>
+                <div>
+                    <p>
+                        Las latas deben ser de una cantidad de litros que divida a 12, 24 y 16. (Considerar lo que ocurre en caso contrario, por ejemplo con latas de 5 L).
+                        <br>Por lo tanto busco un divisor común de 12, 24 y 16. Como esa cantidad de litros debe ser la mayor posible (porque quiero comprar
+                        la menor cantidad posible de latas), buscaré el MCD.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <h2 class="contentHider">Cifras y divisibilidad</h2>
+
+        <div>
+            <p><b>1)</b> Hallar todos los números N = 123X321 múltiplos de 11. </p>
+
+            <div class="indented">
+                <span class="contentHider italic bullet">Solución:</span>
+                <div hidden>
+                    <p> x = 4.</p>
+                </div>
+            </div>
+
+
+            <p><b>2)</b> Hallar todos los números M = 123X32Y múltiplos de 11. </p>
+            <div class="indented">
+                <span class="contentHider italic bullet">Solución:</span>
+                <div hidden>
+                    <p>Pares x y: 0 8, 1 9, 3 0, 4 1, 5 2, 6 3, 7 4, 8 5, 9 6.</p>
+                </div>
+            </div>
+
+            <p><b>3)</b> Hallar todos los números J = 1X4X divisibles por 3 y por 2. </p>
+            <div class="indented">
+                <span class="contentHider italic bullet">Solución:</span>
+                <div hidden>
+                    <p>
+                        Criterio de divisibilidad del 3: 1 + X + 4 + X = múltiplo de 3.
+                        <br>Simplifico: 5 + 2X = múltiplo de 3. 
+                        <br>Se hallan soluciones válidas para los múltiplos 9, 15 y 21: X = 2, 5, 8.
+                        <br>Pero además, J debe ser divisible por 2, por lo tanto las únicas soluciones válidas son X = 2, 8.
+                    </p>
+                </div>
+            </div>
+
+            <p><b>4)</b> Hallar todos los números H, sabiendo que sus únicos divisores primos son 3 y 7, y tienen a lo sumo 9 divisores. </p>
+            <div class="indented">
+                <span class="contentHider italic bullet">Solución:</span>
+                <div hidden>
+                    <p>
+                        H = 3<sup>x</sup> · 7<sup>y</sup>, donde las dos incógnitas son enteros iguales o mayores a 1.<br>
+                        Cantidad de divisores = (x+1)·(y+1) &le; 9. Esta es una ecuación.<br>
+                        Probamos posibles valores de x e y que cumplan con la ecuación hallada. Empezamos por x = 1:<br>
+                        Cuando x = 1, y puede valer 1, 2, o 3. (Tal que la cantidad de divisores no supere 9, en la ecuación). Ahora probamos con x = 2:<br>
+                        Cuando x = 2, y puede valer 1 o 2. Probamos con más valores:<br>
+                        Cuando x = 3, y puede valer 1.<br>
+                        Cuando x = 4, ya no hay valores de y que cumplan la ecuación.<br>
+                    </p>
+                    <p>
+                        Se hallaron los siguientes pares x y: 1 1, 1 2, 1 3, 2 1, 2 2, 3 1. Entonces:<br>
+                        H<sub>1</sub> = 3<sup>1</sup> · 7<sup>1</sup> = 31.<br>
+                        H<sub>2</sub> = 3<sup>1</sup> · 7<sup>2</sup> = 147.<br>
+                        H<sub>3</sub> = 3<sup>1</sup> · 7<sup>3</sup> = 1029.<br>
+                        H<sub>4</sub> = 3<sup>2</sup> · 7<sup>1</sup> = 63.<br>
+                        H<sub>5</sub> = 3<sup>2</sup> · 7<sup>2</sup> = 441.<br>
+                        H<sub>6</sub> = 3<sup>3</sup> · 7<sup>1</sup> = 189.<br>
+                    </p>
+                    
+                </div>
+            </div>
+
+            <p><b>5)</b> Hallar todos los números U, sabiendo que sus únicos divisores primos son 2, 3 y 7, y tienen a lo sumo 12 divisores. </p>
+            <div class="indented">
+                <span class="contentHider italic bullet">Solución:</span>
+                <div hidden>
+                    <p>
+                        U = 2<sup>x</sup> · 3<sup>y</sup> · 7<sup>z</sup>, donde las tres incógnitas son enteros iguales o mayores a 1.<br>
+                        Cant. de divisores = (x+1) (y+1) (z+1) &le; 12. Es un producto de tres factores.<br>
+                        Como cada factor vale como mínimo 2 (cuando su incógnita vale 1), entonces para que
+                        el producto de los tres factores no supere 12 a lo sumo uno de ellos puede valer 3, por lo que hay pocas combinaciones a probar:<br>
+                    </p>
+                    <p>
+                        U<sub>1</sub> = 2<sup>1</sup> · 3<sup>1</sup> · 7<sup>1</sup> = 42.<br>
+                        U<sub>2</sub> = 2<sup>2</sup> · 3<sup>1</sup> · 7<sup>1</sup> = 84.<br>
+                        U<sub>3</sub> = 2<sup>1</sup> · 3<sup>2</sup> · 7<sup>1</sup> = 126.<br>
+                        U<sub>4</sub> = 2<sup>1</sup> · 3<sup>1</sup> · 7<sup>2</sup> = 294.
+                    </p>
+                    
+                </div>
+            </div>
+
+            <p hidden><b>6)</b> Hallar todos los números K = 5X1Y6 divisibles por 11 y 9. </p>
+            
+        </div>
+    </body>
+
+    <script>
+        function toggleHiddenNext() {
+
+            const y = window.scrollY;
+
+            const hidden = this.nextElementSibling.toggleAttribute("hidden");
+            if (hidden) {
+                this.classList.add("italic");
+            } else {
+                this.classList.remove("italic");
+            }
+
+            window.scrollTo(0, y);
+        }
+
+        const clickableHideNext = Array.from(document.getElementsByClassName("contentHider"));
+
+        clickableHideNext.forEach(element => {
+            element.classList.add("clickable");
+            element.onclick = toggleHiddenNext;
+        });
+
+        /*
+        const scroll = document.getElementById("scroll");
+        function updateScroll(){
+            scroll.innerText = window.scrollY.toFixed(1);
+            requestAnimationFrame(updateScroll)
+        }
+        requestAnimationFrame(updateScroll);
+        */
+
+    </script>
+
+</html>
