@@ -1,0 +1,124 @@
+<!doctype html>
+<html>
+    <head>
+		<title>Química</title>
+		<meta charset="UTF-8">
+		<link rel="icon" href="./images/logoBLR.png" type="image/icon type">
+		<link rel="stylesheet" href="./styles/clases.css">
+
+        <link rel="stylesheet" href="./ChemDoodleWeb/ChemDoodleWeb.css" type="text/css">
+        <script type="text/javascript" src="./ChemDoodleWeb/ChemDoodleWeb.js"></script>
+
+		<link rel="preload" href="./fonts/Inter.var.woff2" as="font" type="font/woff2" crossorigin>
+	</head>
+
+    <body>
+
+        <div style="position: absolute; font-size: 10px; font-style: italic;"> TC - 2024 - Consulte para clases particulares.</div>
+        <div id="scroll"style="position: fixed; right: 10px;"></div>
+		
+		<h1 style ="text-align: center">
+			Ejercicios de química<br>
+		</h1>
+
+        <h2 class="contentHider">Nomenclatura de alcanos</h2>
+        <div>
+            <div>
+                <p><b>1) </b>Escribir la fórmula semidesarrollada de los siguientes compuestos:</p>
+    
+                <div class="indented">
+                    <p><b>a) </b>Pentano</p>
+                    <p><b>b) </b>2-metilpentano</p>
+                    <p><b>c) </b>2,2-dimetilpentano</p>
+                    <p><b>d) </b>3-etil-2-metilpentano</p>
+                    <p><b>e) </b>2-etil-3-metilhexano</p>
+                    <p><b>e) </b>2-metil-3,3-dietilpentano</p>
+                    <p><b>f) </b>Dos de los nombres anteriores son incorrectos, indicar cuáles y corregirlos.</p>
+    
+                </div>
+    
+            </div>
+    
+            <div>
+                <p><b>2)</b> Nombrar los siguientes compuestos</p>
+    
+                <div class="indented">
+                    <p><b>a)</b><div id="2-metiloctano" class="molecule"></div></p>
+                    <p><b>b)</b><div id="4-etil-2-metiloctano" class="molecule"></div></p>
+                    <p><b>c)</b><div id="b" class="molecule"></div></p>
+                    <p><b>d)</b><div id="c" class="molecule"></div></p>
+                    <p><b>e)</b><div id="d" class="molecule"></div></p>
+                    <p><b>e)</b><div id="e" class="molecule"></div></p>
+                    <p><b>f)</b><div id="f" class="molecule"></div></p>
+                </div>
+    
+            </div>
+        </div>
+
+    </body>
+
+    <script type="module">
+
+        import {alquenos} from "./ChemDoodleWeb/Molecules/hidrocarburos.js";
+
+        const moleculeContainers = Array.from(document.getElementsByClassName("molecule"));
+
+        moleculeContainers.forEach(containerDiv => {
+
+            // Create canvas within container
+            const molName = containerDiv.id;
+            const canvas = document.createElement("canvas");
+            canvas.id = "canvas " + molName;
+            containerDiv.appendChild(canvas);
+
+            // Read molecule and its size
+            const molecule = ChemDoodle.readMOL(alquenos[molName]);
+            let {x, y} = molecule.getDimension();
+            x = Math.max(Math.ceil(x*2), 100);
+            y = Math.max(Math.ceil(y*2.5), 30);
+
+            // Create and configure chemDoodle Viewer Canvas
+            const chemCanvas = new ChemDoodle.ViewerCanvas(canvas.id, x, y);
+
+            chemCanvas.emptyMessage = "¡Vacío!";
+            chemCanvas.styles.backgroundColor = undefined;
+            chemCanvas.styles.atoms_displayAllCarbonLabels_2D = true;
+            //canvas1.styles.bonds_atomLabelBuffer_2D = 0;
+            
+            // Load molecule and draw on viewer canvas if loaded correctly
+            if (molecule.atoms.length !== 0) {
+                chemCanvas.loadMolecule(molecule);
+                chemCanvas.styles.scale = 1.2;
+                chemCanvas.repaint();
+            }
+            else {
+                chemCanvas.clear();
+            }
+        });
+        
+
+
+        function toggleHiddenNext() {
+
+            const y = window.scrollY;
+
+            const hidden = this.nextElementSibling.toggleAttribute("hidden");
+            if (hidden) {
+                this.classList.add("italic");
+            } else {
+                this.classList.remove("italic");
+            }
+
+            window.scrollTo(0, y);
+        }
+
+        const clickableHideNext = Array.from(document.getElementsByClassName("contentHider"));
+
+        clickableHideNext.forEach(element => {
+            element.classList.add("clickable");
+            element.onclick = toggleHiddenNext;
+        });
+
+    </script>
+
+</html>
