@@ -41,9 +41,7 @@ button:hover {
 	background-color: #ffdd48;
 	cursor: pointer;
 }
-p {
-	line-height: 1.3;
-}
+
 .bold {
 	font-weight: bold;
 }
@@ -57,7 +55,7 @@ p {
 	padding-left: 3ch;
 }
 .bullet {
-position: relative;
+	position: relative;
 }
 .bullet::before  {
     content: '\2022'; /* Unicode for bullet point character */
@@ -69,4 +67,11 @@ position: relative;
 }
 .contentHider: {
 
+}
+.closer-lines p {
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+.closer-lines > p:first-child {
+	margin-top: 16px;
 }
