@@ -75,3 +75,38 @@ button:hover {
 .closer-lines > p:first-child {
 	margin-top: 16px;
 }
+
+.main-text-container {
+	max-width: 65ch;
+	margin-left: 10%;
+	margin-right: 5%;
+}
+
+.answer-list {
+	padding: 0;
+	columns: 1;
+}
+.answer-list li::marker{
+	content: counter(list-item) "- ";
+	font-weight: bold;
+	font-variant-numeric: normal;
+}
+
+.question-list {
+	padding-left: 2ch;
+}
+.question-list li {
+	margin-top: 16px;
+	margin-bottom: 16px;
+}
+.question-list li::marker{
+	content: counter(list-item) ") ";
+	font-weight: bold;
+	font-variant-numeric: normal;
+}
+
+@media (min-width: 55ch) {
+	.answer-list {
+		columns: 2;
+	}
+}
