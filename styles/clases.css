@@ -1,4 +1,4 @@
-@font-face {
+﻿@font-face {
   font-family: "Inter";
   font-style:  normal;
   font-weight: 500;
@@ -83,8 +83,9 @@ button:hover {
 }
 
 .answer-list {
+	display: grid;
+	gap: 10px;
 	padding: 0;
-	columns: 1;
 }
 .answer-list li::marker{
 	content: counter(list-item) "- ";
@@ -93,20 +94,19 @@ button:hover {
 }
 
 .question-list {
-	padding-left: 2ch;
-}
-.question-list li {
-	margin-top: 16px;
-	margin-bottom: 16px;
+	display: grid;
+	gap: 16px;
+	padding: 0;
+	list-style-position: inside;
 }
 .question-list li::marker{
 	content: counter(list-item) ") ";
 	font-weight: bold;
 	font-variant-numeric: normal;
 }
-
-@media (min-width: 55ch) {
+/*
+@media (min-width: 65ch) {
 	.answer-list {
 		columns: 2;
 	}
-}
+}*/

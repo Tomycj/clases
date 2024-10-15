@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+    <head>
+		<title>Química</title>
+		<meta charset="UTF-8">
+		<link rel="icon" href="../images/logoBLR.png" type="image/icon type">
+		<link rel="stylesheet" href="../styles/clases.css">
+		<link rel="preload" href="../fonts/Inter.var.woff2" as="font" type="font/woff2" crossorigin>
+	</head>
+
+    <body>
+        <div style="position: absolute; font-size: 10px; font-style: italic;"> TC - 2024 - Consulte para clases particulares.</div>
+	
+		<h1 style ="text-align: center">Ejercicios de química<br></h1>
+
+        <div class="main-text-container">
+
+            <h2 class="contentHider">Nomenclatura - óxidos</h2>
+            <div>
+                Nombrar los siguentes óxidos según las nomenclaturas tradicional, de la IUPAC, y stock/por atomicidad.
+                Para cada caso, indicar si es un óxido básico (B) o ácido (A).
+
+                <ol class="question-list" style="grid-template-columns: repeat(3, 1fr);">
+                    <li>Cl<sub>2</sub>O<sub>5</sub></li>
+                    <li>PbO</li>
+                    <li>Ni<sub>2</sub>O<sub>3</sub></li>
+                    <li>Cl<sub>2</sub>O<sub>3</sub></li>
+                    <li>Au<sub>2</sub>O</li>
+                    <li>Ag<sub>2</sub>O</li>
+                    <li>I<sub>2</sub>O<sub>3</sub></li>
+                    <li>I<sub>2</sub>O<sub>7</sub></li>
+                </ol>
+                
+                <div class="indented">
+                    <span class="contentHider bullet italic">Mostrar respuestas</span>
+                    <div hidden>
+                        <ol class="answer-list">
+                            <li>(A) Óxido de cloro(V) / Óxido clórico / Pentaóxido de dicloro</li>
+                            <li>(B) Óxido de plomo(II) / Óxido plumboso / Monóxido de plomo</li>
+                            <li>(B) Óxido de níquel(III) / Óxido niquélico / Trióxido de diníquel</li>
+                            <li>(A) Óxido de cloro(III) / Óxido cloroso / Trióxido de dicloro</li>
+                            <li>(B) Óxido de oro(I) / Óxido auroso / Monóxido de oro</li>
+                            <li>(B) Óxido de plata / Óxido de plata / Monóxido de diplata<br>
+                                <i>A veces se aclara el número de oxidación por más que sea el único, consultar con el profesor.</i>
+                            </li>
+                            <li>(A) Óxido de yodo(III) / Óxido yodoso / Trióxido de diyodo</li>
+                            <li>(A) Óxido de yodo(VII) / Óxido peryódico / Heptaóxido de diyodo</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+
+    <script>
+        function toggleHiddenNext() {
+
+            const y = window.scrollY;
+
+            const hidden = this.nextElementSibling.toggleAttribute("hidden");
+            if (hidden) {
+                this.classList.add("italic");
+            } else {
+                this.classList.remove("italic");
+            }
+
+            window.scrollTo(0, y);
+        }
+
+        const clickableHideNext = Array.from(document.getElementsByClassName("contentHider"));
+
+        clickableHideNext.forEach(element => {
+            element.classList.add("clickable");
+            element.onclick = toggleHiddenNext;
+        });
+
+    </script>
+
+</html>
